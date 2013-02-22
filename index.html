@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+
+<head>
+	<title>Living With Poseidon</title>
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="main.css">
+
+	<!-- JavaScript Libraries -->
+	<script src ="js/libs/jquery.js"></script>
+	<script src = "js/libs/underscore.js" type="text/javascript"></script>
+	<script src = "js/libs/backbone.js" type= "text/javascript"></script>
+	<script src = "js/libs/handlebars.js" type="text/javascript"></script>
+
+	<!--  Page JavaScript -->
+	<script src = "js/app.js" type="text/javascript"></script>
+
+	<!-- Templates -->
+</head>
+<body>
+	<div id = "page">
+		<div id = "socialMedia">
+			<img src = " " class = "socialButton" />
+			<img src = " " class = "socialButton" />
+			<div class = "donate">
+				Donate
+			</div>
+		</div>
+
+		<div id = "banner">
+
+		</div>
+
+		<div id = "navBar">
+			<div id = "home" class = "navButton">
+				<span class = "navText">Home</span>
+			</div>
+			<div id = "episodes" class = "navButton">
+				<span class = "navText">Episodes</span>
+			</div>
+			<div id = "characters" class = "navButton">
+				<span class = "navText">Characters</span>
+			</div>
+			<div id = "cast" class = "navButton">
+				<span class = "navText">Cast/Crew</span>
+			</div>
+			<div id = "videos" class = "navButton">
+				<span class = "navText">Videos</span>
+			</div>
+			<div id = "photos" class = "navButton">
+				<span class = "navText">Photos</span>
+			</div>
+		</div>
+
+		<div id = "slideShow">
+			<div id = "slideshowTabs">
+				<div class = "tab" data-id = "0">
+					Item 1
+				</div>
+				<div class = "tab" data-id = "1">
+					Item 2
+				</div>
+				<div class = "tab" data-id = "2">
+					Item 3
+				</div>
+				<div class = "tab" data-id = "3">
+					Item 4
+				</div>
+			</div>
+			<div id = "slideshowBody">
+				<div id = "itemPicture">
+
+				</div>
+				<div id = "itemDetails">
+					<h2>Item 1</h2>
+					<p>
+						This is where a small summary of the slide show
+						would appear to give the user a general idea
+						of what they are about to click on.
+					</p>
+				</div>
+			</div>
+		</div>
+		<div id = "newsFeed">
+			<h1>News Feed</h1>
+			<div class = "newsItem" data-id = "0">
+				<h3>Item Title</h3>
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean faucibus sagittis nulla eu tristique. Donec varius laoreet porta. Vivamus accumsan purus quis nulla elementum rutrum. Cras aliquet facilisis nunc, nec lacinia felis adipiscing quis. Aenean lacus arcu, auctor ut sodales et, interdum quis erat. Praesent turpis lacus, viverra at porttitor quis, pellentesque sed orci. Vestibulum quis erat ultricies eros vulputate aliquet.
+				</p>
+				<p>
+					In vitae quam at ipsum cursus feugiat id ut elit. Cras ante ligula, ullamcorper sit amet placerat eget, feugiat at odio. Donec rhoncus turpis sit amet risus luctus vitae tempus nisi interdum. Praesent vel ipsum non nunc mattis tristique vel sit amet sem. Nulla nibh mi, pellentesque eu adipiscing vitae, volutpat ut ante. Ut dignissim tempor risus eget dignissim. Sed at leo nunc, fermentum mattis justo. Etiam interdum dapibus lorem vel feugiat. In ut erat a purus aliquam laoreet.
+				</p>
+			</div>
+			<div class = "newsItem" data-id = "0">
+				<h3>Item Title</h3>
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean faucibus sagittis nulla eu tristique. Donec varius laoreet porta. Vivamus accumsan purus quis nulla elementum rutrum. Cras aliquet facilisis nunc, nec lacinia felis adipiscing quis. Aenean lacus arcu, auctor ut sodales et, interdum quis erat. Praesent turpis lacus, viverra at porttitor quis, pellentesque sed orci. Vestibulum quis erat ultricies eros vulputate aliquet.
+				</p>
+				<p>
+					In vitae quam at ipsum cursus feugiat id ut elit. Cras ante ligula, ullamcorper sit amet placerat eget, feugiat at odio. Donec rhoncus turpis sit amet risus luctus vitae tempus nisi interdum. Praesent vel ipsum non nunc mattis tristique vel sit amet sem. Nulla nibh mi, pellentesque eu adipiscing vitae, volutpat ut ante. Ut dignissim tempor risus eget dignissim. Sed at leo nunc, fermentum mattis justo. Etiam interdum dapibus lorem vel feugiat. In ut erat a purus aliquam laoreet.
+				</p>
+			</div>
+			<div class = "newsItem" data-id = "0">
+				<h3>Item Title</h3>
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean faucibus sagittis nulla eu tristique. Donec varius laoreet porta. Vivamus accumsan purus quis nulla elementum rutrum. Cras aliquet facilisis nunc, nec lacinia felis adipiscing quis. Aenean lacus arcu, auctor ut sodales et, interdum quis erat. Praesent turpis lacus, viverra at porttitor quis, pellentesque sed orci. Vestibulum quis erat ultricies eros vulputate aliquet.
+				</p>
+				<p>
+					In vitae quam at ipsum cursus feugiat id ut elit. Cras ante ligula, ullamcorper sit amet placerat eget, feugiat at odio. Donec rhoncus turpis sit amet risus luctus vitae tempus nisi interdum. Praesent vel ipsum non nunc mattis tristique vel sit amet sem. Nulla nibh mi, pellentesque eu adipiscing vitae, volutpat ut ante. Ut dignissim tempor risus eget dignissim. Sed at leo nunc, fermentum mattis justo. Etiam interdum dapibus lorem vel feugiat. In ut erat a purus aliquam laoreet.
+				</p>
+			</div>
+			<div class = "newsItem" data-id = "0">
+				<h3>Item Title</h3>
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean faucibus sagittis nulla eu tristique. Donec varius laoreet porta. Vivamus accumsan purus quis nulla elementum rutrum. Cras aliquet facilisis nunc, nec lacinia felis adipiscing quis. Aenean lacus arcu, auctor ut sodales et, interdum quis erat. Praesent turpis lacus, viverra at porttitor quis, pellentesque sed orci. Vestibulum quis erat ultricies eros vulputate aliquet.
+				</p>
+				<p>
+					In vitae quam at ipsum cursus feugiat id ut elit. Cras ante ligula, ullamcorper sit amet placerat eget, feugiat at odio. Donec rhoncus turpis sit amet risus luctus vitae tempus nisi interdum. Praesent vel ipsum non nunc mattis tristique vel sit amet sem. Nulla nibh mi, pellentesque eu adipiscing vitae, volutpat ut ante. Ut dignissim tempor risus eget dignissim. Sed at leo nunc, fermentum mattis justo. Etiam interdum dapibus lorem vel feugiat. In ut erat a purus aliquam laoreet.
+				</p>
+			</div>
+		</div>
+	</div>
+</body>
