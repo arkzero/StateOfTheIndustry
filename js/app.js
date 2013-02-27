@@ -21,8 +21,12 @@
         url: 'newsFeed.json',
 
         initialize: function () {
+        	var self = this;
             this.fetch({
-                update: true
+                update: true,
+                success: function(){
+	            	console.log(self)
+	            }
             });
         }
 
