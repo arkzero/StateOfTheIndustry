@@ -21,12 +21,8 @@
         url: 'newsFeed.json',
 
         initialize: function () {
-        	var self = this;
             this.fetch({
-                update: true,
-                success: function(){
-	            	console.log(self)
-	            }
+                update: true
             });
         }
 
@@ -110,9 +106,9 @@
 					
 				$(this.el).html(this.template({}));
 				collection.each(function(item){
-					view = new FeedItem({
+					view = new FeedItemView({
 						model: item,
-						el: $('#newsFeedItems'),
+						el: $('#newsFeed'),
 						controller: self.controller
 					});
 					view.render();
@@ -123,7 +119,28 @@
 
         window.Slideshow = Backbone.View.extend({
             template: Handlebars.compile($('#Slideshow-template').html()),
-
+			
+			initialize: function (){
+				this.controller = this.options.controller;
+				this.length = this.controller.get('itemsLength');
+				
+				this.collection.bind('reset', this.render, this);
+				this.collection.bind('add', this.render, this);
+				this.collection.bind('remove', this.render, this);
+			},
+			
+			render: function () {
+				var collection = this.collection,
+					self = this,
+					view;
+					
+				$(this.el).html(this.template({}));
+				view = new SlideshowItemView({
+					el: $('#slideshowBody'),
+					model: self.collection.at(0),
+					controller: self.controller
+				});
+			}
         });
 
         /////-----    ROUTER    -----/////
@@ -147,6 +164,11 @@
                 });
             }
 
+        });
+        
+        $(function() {
+            window.App = new App();
+            Backbone.history.start();
         });
 
     });
