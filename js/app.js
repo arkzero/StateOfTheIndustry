@@ -12,7 +12,8 @@
         defaults: {
             slidePosition: 0,
             slideLength: 4,
-            delay: 7000
+            delay: 7000,
+            feedLength: 5
         },
         
         nextSlide: function () {
@@ -25,6 +26,12 @@
                 position = 0;
             }
             this.set({'slidePosition': position});
+        },
+        
+        increaseFeed: function() {
+        	var length = this.get('feedLength');
+        	length += 5;
+        	this.set({feedLength: length});
         }
     });
 
@@ -60,6 +67,7 @@
             var promoted = false,
                 length = 0,
                 self = this;
+
             this.newsItems.each(function (item) {
                 promoted = item.get('promoted');
                 if (promoted && length < self.length) {
@@ -107,6 +115,10 @@
         window.NewsFeedView = Backbone.View.extend({
             template: Handlebars.compile($('#NewsFeed-template').html()),
 			
+			events: {
+				'click #showMore': 'showMore'
+			},
+			
 			initialize: function () {
 				this.controller = this.options.controller;
 				this.length = this.controller.get('itemsLength');
@@ -114,23 +126,31 @@
 				this.collection.bind('reset', this.render, this);
 				this.collection.bind('add', this.render, this);
 				this.collection.bind('remove', this.render, this);
+				this.controller.bind('change:feedLength', this.render, this);
 			},
 			
 			render: function () {
 				var collection = this.collection,
 					self = this,
-					view;
-					
+					length = this.controller.get('feedLength'),
+					view, i = 0;
+				console.log(length)
 				$(this.el).html(this.template({}));
 				collection.each(function(item){
-					view = new FeedItemView({
-						model: item,
-						el: $('#feedItems'),
-						controller: self.controller
-					});
-					view.render();
+					if(i < length){
+						view = new FeedItemView({
+							model: item,
+							el: $('#feedItems'),
+							controller: self.controller
+						});
+						view.render();
+						i++;
+					}
 				});
-				
+			},
+			
+			showMore: function() {
+				this.controller.increaseFeed();
 			}
         });
 
@@ -148,8 +168,20 @@
 				var collection = this.collection,
 					self = this,
 					position = this.controller.get('slidePosition'),
-					view;
-				$(this.el).html(this.template({}));
+					view,
+					titles = [],i;
+					
+            	for (i = 0; i < 4; i += 1){
+	            	titles[i] = this.collection.at(i).get('title');
+	            	console.log(titles[i])
+	            }
+	            
+				$(this.el).html(this.template({
+					title0: titles[0],
+					title1: titles[1],
+					title2: titles[2],
+					title3: titles[3]
+				}));
 				view = new SlideshowItemView({
 					el: $('#slideshowBody'),
 					model: self.collection.at(position),
