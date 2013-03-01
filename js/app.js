@@ -9,7 +9,23 @@
     });
 
     window.Controller = Backbone.Model.extend({
-
+        defaults: {
+            slidePosition: 0,
+            slideLength: 4,
+            delay: 7000
+        },
+        
+        nextSlide: function () {
+            var position = this.get('slidePosition'),
+                length = this.get('slideLength');
+            
+            if (position < length - 1){
+                position++;
+            }else{
+                position = 0;
+            }
+            this.set({'slidePosition': position});
+        }
     });
 
     window.controller = new window.Controller();
@@ -51,6 +67,7 @@
                     length += 1;
                 }
             });
+            this.trigger('reset')
         }
     });
 
@@ -108,7 +125,7 @@
 				collection.each(function(item){
 					view = new FeedItemView({
 						model: item,
-						el: $('#newsFeed'),
+						el: $('#feedItems'),
 						controller: self.controller
 					});
 					view.render();
@@ -120,26 +137,44 @@
         window.Slideshow = Backbone.View.extend({
             template: Handlebars.compile($('#Slideshow-template').html()),
 			
-			initialize: function (){
+			initialize: function () {
 				this.controller = this.options.controller;
 				this.length = this.controller.get('itemsLength');
-				
+
 				this.collection.bind('reset', this.render, this);
-				this.collection.bind('add', this.render, this);
-				this.collection.bind('remove', this.render, this);
 			},
 			
 			render: function () {
 				var collection = this.collection,
 					self = this,
+					position = this.controller.get('slidePosition'),
 					view;
-					
 				$(this.el).html(this.template({}));
 				view = new SlideshowItemView({
 					el: $('#slideshowBody'),
-					model: self.collection.at(0),
+					model: self.collection.at(position),
 					controller: self.controller
 				});
+				view.render();
+				this.startTimer();
+			},
+			
+			startTimer: function () {
+			     var position = this.controller.get('slidePosition'),
+			         delay = this.controller.get('delay'),
+			         self = this;
+     
+			     $('#bar-'+position).animate({
+			         width: '100%',
+			     }, delay, function(){
+			         $(this).css('width', '0px');
+			         self.nextSlide();
+			     })
+			},
+			
+			nextSlide: function () {
+			    this.controller.nextSlide();
+			    this.render();
 			}
         });
 
@@ -157,9 +192,9 @@
                     controller: window.controller
                 });
 
-                this.slideShowView = new window.SlideshowItemView({
+                this.slideShowView = new window.Slideshow({
                     el: $('#slideShow'),
-                    colletion: window.slideShow,
+                    collection: window.slideShow,
                     controller: window.controller
                 });
             }

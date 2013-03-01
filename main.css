@@ -77,6 +77,18 @@ div#slideShow{
 	background-color: #3f3;
 }
 
+#slideShow #slideshowTabs .tab div.barContainer{
+	height: 5px;
+	width: 90%;
+	margin: auto;
+}
+
+#slideShow #slideshowTabs .tab .barContainer div.loadingBar{
+	height: 100%;
+	width: 0px;
+	background-color: red;
+}
+
 #slideShow div#slideshowBody{
 	height: 300px;
 	background-color: #98c;

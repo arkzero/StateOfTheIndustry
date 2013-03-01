@@ -16,6 +16,66 @@
 	<script src = "js/app.js" type="text/javascript"></script>
 
 	<!-- Templates -->
+	<script type = "text/template" id = "FeedItem-template">
+        <div class = "newsItem" data-id = {{ index}}>
+	        <h3>{{title}}</h3>
+	        {{{body}}}
+        </div>
+	</script>
+
+	<script type = "text/template" id = "SlideshowItem-template">
+		<div class = "slideShowItem" data-id = {{index}}>
+			<div id = "itemPicture">
+				<img src = {{picture}}>
+			</div>
+			<div id = "itemDetails">
+				<h2>{{title}}</h2>
+				<p>
+					{{summary}}
+				</p>
+			</div>
+		</div>
+	</script>
+	
+	<script type = "text/template" id = "NewsFeed-template">
+		<h1>News Feed</h1>
+			<div id = "feedItems">
+			
+			</div>
+		</div>
+	</script>
+	
+	<script type = "text/template" id = "Slideshow-template">
+		<div id = "slideshowTabs">
+			<div class = "tab" data-id = "0">
+				Item 1
+				<div class = "barContainer">
+					<div id = "bar-0" class = "loadingBar"></div>
+				</div>
+			</div>
+			<div class = "tab" data-id = "1">
+				Item 2
+				<div class = "barContainer">
+					<div id = "bar-1" class = "loadingBar"></div>
+				</div>
+			</div>
+			<div class = "tab" data-id = "2">
+				Item 3
+				<div class = "barContainer">
+					<div id = "bar-2" class = "loadingBar"></div>
+				</div>
+			</div>
+			<div class = "tab" data-id = "3">
+				Item 4
+				<div class = "barContainer">
+					<div id = "bar-3" class = "loadingBar"></div>
+				</div>
+			</div>
+		</div>
+		<div id = "slideshowBody">
+
+		</div>
+	</script>
 </head>
 <body>
 	<div id = "page">
@@ -53,72 +113,10 @@
 		</div>
 
 		<div id = "slideShow">
-			<div id = "slideshowTabs">
-				<div class = "tab" data-id = "0">
-					Item 1
-				</div>
-				<div class = "tab" data-id = "1">
-					Item 2
-				</div>
-				<div class = "tab" data-id = "2">
-					Item 3
-				</div>
-				<div class = "tab" data-id = "3">
-					Item 4
-				</div>
-			</div>
-			<div id = "slideshowBody">
-				<div id = "itemPicture">
-
-				</div>
-				<div id = "itemDetails">
-					<h2>Item 1</h2>
-					<p>
-						This is where a small summary of the slide show
-						would appear to give the user a general idea
-						of what they are about to click on.
-					</p>
-				</div>
-			</div>
+			
 		</div>
 		<div id = "newsFeed">
-			<h1>News Feed</h1>
-			<div class = "newsItem" data-id = "0">
-				<h3>Item Title</h3>
-				<p>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean faucibus sagittis nulla eu tristique. Donec varius laoreet porta. Vivamus accumsan purus quis nulla elementum rutrum. Cras aliquet facilisis nunc, nec lacinia felis adipiscing quis. Aenean lacus arcu, auctor ut sodales et, interdum quis erat. Praesent turpis lacus, viverra at porttitor quis, pellentesque sed orci. Vestibulum quis erat ultricies eros vulputate aliquet.
-				</p>
-				<p>
-					In vitae quam at ipsum cursus feugiat id ut elit. Cras ante ligula, ullamcorper sit amet placerat eget, feugiat at odio. Donec rhoncus turpis sit amet risus luctus vitae tempus nisi interdum. Praesent vel ipsum non nunc mattis tristique vel sit amet sem. Nulla nibh mi, pellentesque eu adipiscing vitae, volutpat ut ante. Ut dignissim tempor risus eget dignissim. Sed at leo nunc, fermentum mattis justo. Etiam interdum dapibus lorem vel feugiat. In ut erat a purus aliquam laoreet.
-				</p>
-			</div>
-			<div class = "newsItem" data-id = "0">
-				<h3>Item Title</h3>
-				<p>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean faucibus sagittis nulla eu tristique. Donec varius laoreet porta. Vivamus accumsan purus quis nulla elementum rutrum. Cras aliquet facilisis nunc, nec lacinia felis adipiscing quis. Aenean lacus arcu, auctor ut sodales et, interdum quis erat. Praesent turpis lacus, viverra at porttitor quis, pellentesque sed orci. Vestibulum quis erat ultricies eros vulputate aliquet.
-				</p>
-				<p>
-					In vitae quam at ipsum cursus feugiat id ut elit. Cras ante ligula, ullamcorper sit amet placerat eget, feugiat at odio. Donec rhoncus turpis sit amet risus luctus vitae tempus nisi interdum. Praesent vel ipsum non nunc mattis tristique vel sit amet sem. Nulla nibh mi, pellentesque eu adipiscing vitae, volutpat ut ante. Ut dignissim tempor risus eget dignissim. Sed at leo nunc, fermentum mattis justo. Etiam interdum dapibus lorem vel feugiat. In ut erat a purus aliquam laoreet.
-				</p>
-			</div>
-			<div class = "newsItem" data-id = "0">
-				<h3>Item Title</h3>
-				<p>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean faucibus sagittis nulla eu tristique. Donec varius laoreet porta. Vivamus accumsan purus quis nulla elementum rutrum. Cras aliquet facilisis nunc, nec lacinia felis adipiscing quis. Aenean lacus arcu, auctor ut sodales et, interdum quis erat. Praesent turpis lacus, viverra at porttitor quis, pellentesque sed orci. Vestibulum quis erat ultricies eros vulputate aliquet.
-				</p>
-				<p>
-					In vitae quam at ipsum cursus feugiat id ut elit. Cras ante ligula, ullamcorper sit amet placerat eget, feugiat at odio. Donec rhoncus turpis sit amet risus luctus vitae tempus nisi interdum. Praesent vel ipsum non nunc mattis tristique vel sit amet sem. Nulla nibh mi, pellentesque eu adipiscing vitae, volutpat ut ante. Ut dignissim tempor risus eget dignissim. Sed at leo nunc, fermentum mattis justo. Etiam interdum dapibus lorem vel feugiat. In ut erat a purus aliquam laoreet.
-				</p>
-			</div>
-			<div class = "newsItem" data-id = "0">
-				<h3>Item Title</h3>
-				<p>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean faucibus sagittis nulla eu tristique. Donec varius laoreet porta. Vivamus accumsan purus quis nulla elementum rutrum. Cras aliquet facilisis nunc, nec lacinia felis adipiscing quis. Aenean lacus arcu, auctor ut sodales et, interdum quis erat. Praesent turpis lacus, viverra at porttitor quis, pellentesque sed orci. Vestibulum quis erat ultricies eros vulputate aliquet.
-				</p>
-				<p>
-					In vitae quam at ipsum cursus feugiat id ut elit. Cras ante ligula, ullamcorper sit amet placerat eget, feugiat at odio. Donec rhoncus turpis sit amet risus luctus vitae tempus nisi interdum. Praesent vel ipsum non nunc mattis tristique vel sit amet sem. Nulla nibh mi, pellentesque eu adipiscing vitae, volutpat ut ante. Ut dignissim tempor risus eget dignissim. Sed at leo nunc, fermentum mattis justo. Etiam interdum dapibus lorem vel feugiat. In ut erat a purus aliquam laoreet.
-				</p>
-			</div>
+			
 		</div>
 	</div>
 </body>
