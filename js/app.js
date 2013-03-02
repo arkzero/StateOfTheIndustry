@@ -156,12 +156,17 @@
 
         window.Slideshow = Backbone.View.extend({
             template: Handlebars.compile($('#Slideshow-template').html()),
+            
+            events: {
+                'click .tab': 'changeSlide'
+            },
 			
 			initialize: function () {
 				this.controller = this.options.controller;
 				this.length = this.controller.get('itemsLength');
 
 				this.collection.bind('reset', this.render, this);
+				this.controller.bind('change:slidePosition', this.render, this);
 			},
 			
 			render: function () {
@@ -200,13 +205,15 @@
 			         width: '100%',
 			     }, delay, function(){
 			         $(this).css('width', '0px');
-			         self.nextSlide();
+			         self.controller.nextSlide();
 			     })
 			},
 			
-			nextSlide: function () {
-			    this.controller.nextSlide();
-			    this.render();
+			changeSlide: function (event) {
+			    var id = $(event.currentTarget).data('id');
+			    
+			    this.controller.set({slidePosition: id});
+			    $('.loadingBar').css('width', '0px');
 			}
         });
 

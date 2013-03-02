@@ -1,5 +1,5 @@
 body{
-	background-color: #ccc;
+	background-color: #cef;
 }
 
 div#page{
@@ -10,7 +10,7 @@ div#page{
 }
 
 div#socialMedia{
-	background-color: #999;
+	background-color: #ccc;
 	padding: 10px;
 	height: 40px;
 }
@@ -18,17 +18,14 @@ div#socialMedia{
 #socialMedia .socialButton{
 	height: 40px;
 	width: 40px;
-	background-color: blue;
 	position: relative;
 	float: right;
 	margin-left: 10px;
 }
 
-#socialMedia div.donate{
+#socialMedia .donate{
 	width: 80px;
-	height: 10px;
-	background-color: yellow;
-	padding: 15px;
+	height: 40px;
 	position: relative;
 	float: right;
 }
@@ -36,7 +33,7 @@ div#socialMedia{
 div#banner{
 	width: 100%;
 	background-color: #38f;
-	height: 200px;
+	height: 350px;
 }
 
 div#navBar{
@@ -49,13 +46,18 @@ div#navBar{
 	position: relative;
 	float: left;
 	border: 1px solid black;
-	background-color: #0cf;
+	background-color: #6cf;
 	text-align: center;
+	background-image: url(img/navButton.png);
+	background-position-y: 30px;
+	background-repeat: no-repeat;
 }
 
 #navBar .navButton span.navText{
 	position: relative;
 	top: 12px;
+	color: white;
+	font-weight: bold;
 }
 
 div#slideShow{
@@ -65,6 +67,7 @@ div#slideShow{
 
 #slideShow div#slideshowTabs{
 	height: 30px;
+	cursor: pointer;
 }
 
 #slideShow #slideshowTabs div.tab{
@@ -74,19 +77,22 @@ div#slideShow{
 	height: 28px;
 	border: solid black 1px;
 	text-align: center;
-	background-color: #3f3;
+	background-color: #c0dafd;
 }
 
 #slideShow #slideshowTabs .tab div.barContainer{
 	height: 5px;
-	width: 90%;
+	width: 100%;
 	margin: auto;
+	position: relative;
+	top: 4px;
+	background-color: #666;
 }
 
 #slideShow #slideshowTabs .tab .barContainer div.loadingBar{
 	height: 100%;
 	width: 0px;
-	background-color: red;
+	background-color: #002aff;
 }
 
 #slideShow div#slideshowBody{
@@ -101,13 +107,18 @@ div#slideShow{
 	height: 300px;
 }
 
+#slideShow #slideshowBody div#itemPicture img{
+	width: 100%;
+	height: 100%;
+}
+
 #slideShow #slideshowBody div#itemDetails{
 	margin-left: 593px;
 	width: 327px;
 	padding: 20px;
 	height: 260px;
-	background-color: black;
-	color: white;
+	background-color: #000033;
+	color: #FFFFFF;
 }
 
 #slideShow #slideshowBody div#itemDetails h2{
@@ -115,9 +126,10 @@ div#slideShow{
 }
 
 div#newsFeed{
-	background-color: #999;
+	background-color: #8cf;
 	padding: 30px;
 	margin-top: 30px;
+	padding-top: 5px;
 }
 
 #newsFeed h1{
@@ -127,6 +139,17 @@ div#newsFeed{
 #newsFeed div.newsItem{
 	width: 850px;
 	padding: 30px;
-	background-color: #8cf;
+	background-color: #eee;
 	margin-bottom: 15px;
+}
+
+#showMore{
+	width: 300px;
+	background-color: #39f;
+	color: white;
+	font-size: 26px;
+	text-align: center;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	margin: auto;
 }
