@@ -41,7 +41,7 @@
 
     window.NewsItems = Backbone.Collection.extend({
         model: window.NewsItem,
-        url: 'newsFeed.json',
+        url: 'json/newsFeed.json',
 
         initialize: function () {
             this.fetch({
