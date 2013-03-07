@@ -153,3 +153,72 @@ div#newsFeed{
 	padding-bottom: 10px;
 	margin: auto;
 }
+
+#charactersPage{
+	margin-top: 25px;
+	height: 451px;
+}
+
+#charactersPage #characterList{
+	position: relative;
+	float: left;
+	width: 367px;
+	text-align: center;
+}
+
+#charactersPage #characterList .character{
+	border: 1px solid black;
+	padding: 10px;
+	font-size: 20px;
+	background-color: #8cf;
+}
+
+#charactersPage #characterList .character.selected{
+	border-right: 0;
+	background-color: #ccc;
+}
+
+#charactersPage #characterInfo{
+	position: relative;
+	float: right;
+	width: 593px;
+}
+
+#charactersPage #characterInfo .info{
+	padding: 20px;
+	width: 552px;
+	position: relative;
+	float: right;
+	background-color: #ccc;
+	height: 408px;
+	border: 1px black solid;
+	border-left: 0;
+}
+
+#charactersPage #characterInfo .info p{
+	width: 553px;	
+}
+
+#charactersPage #characterInfo .new{
+	width: 0px;
+	padding: 20px 0px;
+	position: relative;
+	float: left;
+	height: 408px;
+	border-right: 0;
+}
+
+#charactersPage #characterInfo img{
+	width: 150px;
+	height: 150px;
+	float: right;
+	position: absolute;
+}
+
+#charactersPage #characterInfo h2{
+	float: right;
+	font-size: 48px;
+	width: 100%;
+	text-align: center;
+	margin-bottom: 65px;
+}

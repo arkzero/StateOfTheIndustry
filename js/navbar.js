@@ -1,7 +1,6 @@
 (function ($) {
     $(document).ready(function () {
         $('.navButton').hover(function(event){
-            console.log('pew')
             $(event.currentTarget).animate({
                 backgroundPositionY: '-=30'
             }, 250);
