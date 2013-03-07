@@ -222,3 +222,40 @@ div#newsFeed{
 	text-align: center;
 	margin-bottom: 65px;
 }
+
+img.photoView{
+	width: 200px;
+	height: 200px;
+	margin: 17.5px;
+	border: 1px black solid;
+	background-color: #fff;
+}
+
+#photosList{
+	background-color: #ccc;
+	margin-top: 30px;
+}
+
+#photoInfo{
+	position: fixed;
+	background-color: #999;
+	width: 0px;
+	margin-left: 492px;
+	top: 50px;
+}
+
+#photoInfo #largePhoto{
+	margin: 36px;
+	background-color: #fff;
+}
+
+#photoInfo #largePhoto img{
+	width: 578px;
+	padding: 25px;
+}
+
+#photoDescription p{
+	margin: 30px;
+	background-color: #ccc;
+	padding: 20px;
+}
