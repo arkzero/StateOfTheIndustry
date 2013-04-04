@@ -19,8 +19,13 @@
 	<!-- Templates -->
 	<script type = "text/template" id = "FeedItem-template">
         <div class = "newsItem" data-id = {{ index}}>
-	        <h3>{{title}}</h3>
-	        {{{body}}}
+        	<div class = "newsPhoto">
+        		<img src = {{picture}}>
+        	</div>
+        	<div class = "newsText">
+		        <h3>{{title}}</h3>
+		        {{{body}}}
+	        </div>
         </div>
 	</script>
 
@@ -90,9 +95,6 @@
 			<a href = "http://twitter.com/">
 				<img src = "img/twitter.png" class = "socialButton" />
 			</a>
-			<a href = "http://google.com/">
-				<img src = "img/donate.png" class = "donate" />
-			</a>
 		</div>
 
 		<div id = "banner">
@@ -107,27 +109,17 @@
 			</a>
 			<a href = "index.html">
 				<div id = "episodes" class = "navButton">
-					<span class = "navText">Episodes</span>
+					<span class = "navText">Articles</span>
 				</div>
 			</a>
 			<a href = "index.html">
 				<div id = "characters" class = "navButton">
-					<span class = "navText">Characters</span>
+					<span class = "navText">Podcasts</span>
 				</div>
 			</a>
 			<a href = "index.html">
 				<div id = "cast" class = "navButton">
-					<span class = "navText">Cast/Crew</span>
-				</div>
-			</a>
-			<a href = "index.html">
-				<div id = "videos" class = "navButton">
-					<span class = "navText">Videos</span>
-				</div>
-			</a>
-			<a href = "index.html">
-				<div id = "photos" class = "navButton">
-					<span class = "navText">Photos</span>
+					<span class = "navText">About</span>
 				</div>
 			</a>
 		</div>
