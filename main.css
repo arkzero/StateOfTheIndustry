@@ -124,6 +124,10 @@ div#slideShow{
 	text-align: center;
 }
 
+#slideShow a{
+	color:white;
+}
+
 div#newsFeed{
 	background-color: #FFF;
 	padding: 30px;
@@ -148,7 +152,6 @@ div#newsFeed{
 	height: 150px;
 	position: relative;
 	float: left;
-	margin-top: 64px;
 }
 
 #newsFeed .newsItem .newsPhoto img{
