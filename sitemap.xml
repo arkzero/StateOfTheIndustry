@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+	<url>
+	  <loc>http://ec2-54-234-43-75.compute-1.amazonaws.com/</loc>
+	  <lastmod>2013-7-4</lastmod>
+	  <changefreq>weekly</changefreq>
+	  <priority>1</priority>
+	</url>
+	
+	<url>
+	  <loc>http://ec2-54-234-43-75.compute-1.amazonaws.com/articles</loc>
+	  <lastmod>2013-7-4</lastmod>
+	  <changefreq>weekly</changefreq>
+	  <priority>1</priority>
+	</url>
+	
+	<url>
+	  <loc>http://ec2-54-234-43-75.compute-1.amazonaws.com/articles/article1.html</loc>
+	  <lastmod>2013-7-4</lastmod>
+	  <changefreq>never</changefreq>
+	  <priority>1</priority>
+	</url>
+	
+	<url>
+	  <loc>http://ec2-54-234-43-75.compute-1.amazonaws.com/articles/articles2.html</loc>
+	  <lastmod>2013-7-4</lastmod>
+	  <changefreq>never</changefreq>
+	  <priority>1</priority>
+	</url>
+	
+	<url>
+	  <loc>http://ec2-54-234-43-75.compute-1.amazonaws.com/podcast</loc>
+	  <lastmod>2013-7-4</lastmod>
+	  <changefreq>weekly</changefreq>
+	  <priority>1</priority>
+	</url>
+	
+	<url>
+	  <loc>http://ec2-54-234-43-75.compute-1.amazonaws.com/podcast/episode1.html</loc>
+	  <lastmod>2013-7-4</lastmod>
+	  <changefreq>weekly</changefreq>
+	  <priority>1</priority>
+	</url>
+	
+	<url>
+	  <loc>http://ec2-54-234-43-75.compute-1.amazonaws.com/about</loc>
+	  <lastmod>2013-7-4</lastmod>
+	  <changefreq>never</changefreq>
+	  <priority>1</priority>
+	</url>
+</urlset>
